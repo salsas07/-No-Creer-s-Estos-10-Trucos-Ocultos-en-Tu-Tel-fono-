@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Trucos Ocultos en Tu Teléfono</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Estilo de la sección de contenido */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #tricks-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #tricks-list li {
+            background-color: #fff;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        #tricks-list li:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+
+        #tricks-list li span {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Estilo de pie de página */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¡No Creerás Estos 10 Trucos Ocultos en Tu Teléfono!</h1>
+        <p>Lo que nadie te ha contado y todos usan en secreto</p>
+    </header>
+    <section class="content">
+        <ul id="tricks-list">
+            <!-- Los trucos se llenarán aquí con JavaScript -->
+        </ul>
+        <button id="loadMoreBtn" onclick="loadMore()">Ver Más Trucos</button>
+    </section>
+    <footer>
+        <p>&copy; 2025 Hackea Tu Mundo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Lista de trucos ocultos con links de monetización (esto lo puedes cambiar a tus links)
+        const tricks = [
+            { name: "El Secreto del 'Modo Aurora' Secreto", link: "https://tulink.com/modo-aurora" },
+            { name: "Cómo Revelar Funciones Ocultas en WhatsApp", link: "https://tulink.com/whatsapp-oculto" },
+            { name: "La Magia del 'Modo Invisibilidad' en iPhone", link: "https://tulink.com/iphone-invisible" },
+            { name: "Activar el 'Modo Espectral' en Android", link: "https://tulink.com/android-espectral" },
+            { name: "El Modo Ninja para WhatsApp: Leer Mensajes Sin Dejar Huella", link: "https://tulink.com/ninja-whatsapp" },
+            { name: "Cómo Desbloquear Funciones Secretas en YouTube", link: "https://tulink.com/youtube-secret" },
+            { name: "Convertir Tu Android en un Teléfono Hiper Rápido", link: "https://tulink.com/android-rapido" },
+            { name: "Hackea Tu Red Wi-Fi Con Un Truco Secreto", link: "https://tulink.com/hackea-wifi" },
+            { name: "Cómo Desactivar El Rastreo De Tu Ubicación Sin Dejar Rastro", link: "https://tulink.com/desactivar-rastreo" },
+            { name: "Truco Secreto Para Conseguir Datos Gratis en Tu Teléfono", link: "https://tulink.com/datos-gratis" }
+        ];
+
+        let currentTricks = 0;
+        const tricksPerLoad = 3; // Cuántos trucos mostrar por vez
+
+        // Función para cargar trucos en la lista
+        function loadTricks() {
+            const list = document.getElementById('tricks-list');
+            for (let i = currentTricks; i < currentTricks + tricksPerLoad; i++) {
+                if (i < tricks.length) {
+                    const li = document.createElement('li');
+                    const trick = tricks[i];
+                    li.innerHTML = `<span>${trick.name}</span>`;
+                    li.onclick = () => window.location.href = trick.link; // Redirigir al hacer clic
+                    list.appendChild(li);
+                }
+            }
+            currentTricks += tricksPerLoad;
+            if (currentTricks >= tricks.length) {
+                document.getElementById('loadMoreBtn').style.display = 'none';
+            }
+        }
+
+        // Función para cargar más trucos cuando se presiona el botón
+        function loadMore() {
+            loadTricks();
+        }
+
+        // Cargar los primeros trucos cuando la página carga
+        window.onload = () => {
+            loadTricks();
+        };
+    </script>
+</body>
+</html>
